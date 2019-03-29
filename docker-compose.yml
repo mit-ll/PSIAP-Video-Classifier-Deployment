@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  tf-server:
+    build: ./tf_serving
+    ports:
+      - "8501:8501"
+      - "8500:8500"
+    #environment: # uncomment for debug
+        #- TF_CPP_MIN_VLOG_LEVEL=1
+
+  iva-client:
+    build: ./client
+    links:
+      - tf-server
+    volumes:
+      - type: bind
+        source: ./videos
+        target: /videos
+        read_only: true
+        bind:
+          propagation: shared
+      - type: bind
+        source: ./reports
+        target: /reports
+        bind:
+          propagation: shared
+

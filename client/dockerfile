@@ -1,0 +1,17 @@
+FROM python:3.6-slim
+
+ENV NO_PROXY=tf-server
+ENV no_proxy=tf-server
+
+COPY setup /setup
+
+RUN pip install -r /setup/requirements.txt\
+&& apt-get update\
+&& apt-get install -y curl\
+&& apt-get install -y ffmpeg\
+&& ffmpeg -version
+
+COPY app /app
+
+ENTRYPOINT ["/app/run.sh"]
+# ENTRYPOINT ["/bin/bash"]
