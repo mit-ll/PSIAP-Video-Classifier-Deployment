@@ -1,4 +1,4 @@
-# IVA Client docker container
+# Client docker container
 
 Put python requirements in `setup/requirements.txt`
 
