@@ -2,8 +2,8 @@
 This sets up a pair of Docker container services for classifying footage with a tensorflow model
 
 The two services are:
-- tf_server: A tensorflow-serving server which hosts Convolutional Neural Networks. The example model classifies footage as in-vehicle or out-of-vehicle. The services can be accessed from localhost at `localhost:8501`, or from within the docker-compose network at `tf_server`
-- client: A python3 docker image which processes the videos contained within the subdirectory `videos` and generates a report in the subdirectory `reports`. It accomplishes this by using ffmpeg to extract keyframes, then submits those frames to `tf_server` for classification, and then generates a report based on the classifications.
+- tf_server: A tensorflow-serving server which hosts Convolutional Neural Networks. The example model classifies footage as in-vehicle or out-of-vehicle. The services can be accessed from localhost at `localhost:8501`, or from within the docker-compose network at `tf_server`. See [the tf_server README](https://github.com/mit-ll/PSIAP-Video-Classifier-Deployment/tree/master/tf_serving) for more details
+- client: A python3 docker image which processes the videos contained within the subdirectory `videos` and generates a report in the subdirectory `reports`. It accomplishes this by using ffmpeg to extract keyframes, then submits those frames to `tf_server` for classification, and then generates a report based on the classifications. See [the client README](https://github.com/mit-ll/PSIAP-Video-Classifier-Deployment/tree/master/client) for more details
 
 ## Windows Set-Up
 
