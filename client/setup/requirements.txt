@@ -4,7 +4,7 @@ cloudpickle==0.7.0
 cycler==0.10.0
 dask==2021.10.0
 decorator==4.3.2
-idna==2.8
+idna==3.7
 kiwisolver==1.0.1
 matplotlib==3.0.2
 networkx==2.2
